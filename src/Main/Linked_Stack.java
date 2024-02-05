@@ -1,6 +1,6 @@
 package Main;
 
-class node_LinkedStack<T> {  //this class include to be added
+class node_LinkedStack<T> {  //this class include node to be added
     T item;
     node_LinkedStack next;
 }
