@@ -100,18 +100,18 @@ public class LinkedList {
             length--;
         }
         else{
-            nodeLinkedList cur = first.next;
+            nodeLinkedList curr = first.next;
             nodeLinkedList prev = first;
-            while(cur != null) {
-                if(cur.item == element)
+            while(curr != null) {
+                if(curr.item == element)
                     break;
-                prev = cur;
-                cur = cur.next;
+                prev = curr;
+                curr = curr.next;
             }
-            if(cur == null)
+            if(curr == null)
                 System.out.println("element not found");
             else {
-                prev.next = cur.next;
+                prev.next = curr.next;
                 length--;
             }
         }
@@ -126,15 +126,27 @@ public class LinkedList {
             last.next = null;
         }
         else {
-            nodeLinkedList cur = first.next;
+            nodeLinkedList curr = first.next;
             nodeLinkedList prev = first;
             for (int i = 0; i < position-1; i++) {
-                prev = cur;
-                cur = cur.next;
+                prev = curr;
+                curr = curr.next;
             }
-            prev.next = cur.next;
+            prev.next = curr.next;
         }
         length--;
+    }
+    void reverse() {
+        nodeLinkedList prev = null;
+        nodeLinkedList curr = first;
+        nodeLinkedList next = curr.next;
+        while (next != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        first = prev;
     }
     void print() {
         nodeLinkedList cur = first;
