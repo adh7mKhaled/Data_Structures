@@ -43,11 +43,14 @@ public class MergeSort {
     }
     void mergeSort(int[] arr, int l, int r) {
         if (l < r) {
+
+            // m is the point(middle) where the array is divided into two subArrays
             int m = l + (r - l) / 2;
 
             mergeSort(arr, l, m);
             mergeSort(arr, m + 1, r);
 
+            // Merge the sorted subArrays
             merge(arr, l, m ,r);
         }
     }
